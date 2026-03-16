@@ -9,12 +9,30 @@ The __Louisville & Jefferson County Landbank Authority, Inc__ also known as simp
 
 __Their goal is to tackle urban blight, simplify property titles, and foster neighborhood revitalization__.
 
-## Tools & Technologies
+__Data Source:__
+This project uses open data provided by the Louisville/Jefferson County Information Consortium (LOJIC) through the Louisville Metro Open Data Portal. The data is publicly available and licensed for use subject to the portal’s terms and conditions. LOJIC and its partner agencies provide the data “as is” without warranty regarding accuracy, completeness, or fitness for a particular purpose.
 
+__Attribution__: Mapping Data Source: LOJIC.
+
+## Tools & Technologies
+  - __MS Power Point__: Dashboard design and wireframing.
+  -  __Power BI__: data cleaning (Power Query M),and visualisation.
+    
 ## Methodology
 
 ### 1. Exploratory Data Analysis
+  Due to lack of expertise in this industry, I simulated a _Subject Matter Expert_ throught ChatGPT to which I called: Loretta Mae Harlan, Project Manager at Lousiville Landbank Authority to get answers about the dataset.
 
+  - Pull a sample of 5 rows of the dataset to have an idea of the field data types.
+  - Count-summarized all the quantitative columns to assess the impact of missing values (blank or nulls). 
+  - Leveraged pandas.info() to find fields with null values.
+  - Continue here...
+
+Business Clarifications:
+-  Most of the property sales amounts in the dataset that are listed as 1 USD are correct because the cituy's priority is revitalization, not profit.
+-  The field "Post Dir" (Post Directional) appears to relate to address directionals (e.g. rear units), but due to unclear documentation and minimal use, it was excluded from the analysis.   
+
+  
 ### 2. Data Cleaning
 
 ### 3. Data Modeling
