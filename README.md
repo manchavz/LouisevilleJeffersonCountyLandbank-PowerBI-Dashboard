@@ -21,7 +21,7 @@ __Attribution__: Mapping Data Source: LOJIC.
 ## Methodology
 
 ### 1. Exploratory Data Analysis
-  Due to lack of expertise in this industry, I simulated a _Subject Matter Expert_ throught ChatGPT to which I called: Loretta Mae Harlan, Project Manager at Lousiville Landbank Authority to get answers about the dataset.
+  Due to lack of expertise in this industry, I simulated a _Subject Matter Expert (SME)_ throught ChatGPT to which I called: Olivia White, Project Manager at Lousiville Landbank Authority to get answers about the dataset.
 
   - Pull a sample of 5 rows of the dataset to have an idea of the field data types.
   - Count-summarized all the quantitative columns to assess the impact of missing values (blank or nulls). 
@@ -30,7 +30,8 @@ __Attribution__: Mapping Data Source: LOJIC.
 
 Business Clarifications:
 -  Most of the property sales amounts in the dataset that are listed as 1 USD are correct because the cituy's priority is revitalization, not profit.
--  The field "Post Dir" (Post Directional) appears to relate to address directionals (e.g. rear units), but due to unclear documentation and minimal use, it was excluded from the analysis.   
+-  The field "Post Dir" (Post Directional) appears to relate to address directionals (e.g. rear units), but due to unclear documentation and minimal use, it was excluded from the analysis.
+-  Some records have missing Zip Codes. The SME mentioned that some lots are unassigned or hard to map areas. It is important to include them to reflect the Landbank's total impact. Therefore, records were preserved and labeled explicitly as Unknown.
 
   
 ### 2. Data Cleaning
