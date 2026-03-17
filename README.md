@@ -32,6 +32,7 @@ Business Clarifications:
 -  Most of the property sales amounts in the dataset that are listed as 1 USD are correct because the cituy's priority is revitalization, not profit.
 -  The field "Post Dir" (Post Directional) appears to relate to address directionals (e.g. rear units), but due to unclear documentation and minimal use, it was excluded from the analysis.
 -  Some records have missing Zip Codes. The SME mentioned that some lots are unassigned or hard to map areas. It is important to include them to reflect the Landbank's total impact. Therefore, records were preserved and labeled explicitly as Unknown.
+-  Created a "Zone Category" with the idea to make the dashboard more insightful and audience friendly.
 
   
 ### 2. Data Cleaning
