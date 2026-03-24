@@ -35,19 +35,40 @@ Business Clarifications:
 -  The field "Post Dir" (Post Directional) appears to relate to address directionals (e.g. rear units), but due to unclear documentation and minimal use, it was excluded from the analysis.
 -  Some records have missing Zip Codes. The SME mentioned that some lots are unassigned or hard to map areas. It is important to include them to reflect the Landbank's total impact. Therefore, records were preserved and labeled explicitly as Unknown.
 -  Created a "Zone Category" with the idea to make the dashboard more insightful and audience friendly.
+  - Residential: single-family and multi-family housing zones.
+  - Mixed-Use: zones allow blending residential, office, and small-scale uses.
+  - Commercial: retail and commercial zones. From local to large-scale businesses.
+  - Industrial: Enterprise and manufacturing zones for industrial use, warehousing, logistincs, etc.
+  - Other:  a not mapped category.
+-  Parcel Id field: the only field that cannot have duplicate values.
+-  Rows excluded/removed:
+  - "Post dir" field due to lack of documentation. Same for "Dir" field.
+  - "Owner" field: there is only one owner LBA which is the client.  
 
 ### 3. Data Modeling
 After the dataset has been cleaned and structured, I modelled it following the Kimball approach (Star Schema).
 
 - FactSales: ParcelId, SaleDate, SaleAmount
-- DimAddress: St#, Dir, PostDir, StreeName, StType, ZipGroup
-- DimZone; ZoneCategory, Nhood, CouncilDist
-- DimApplicant: Applicant, Id
-- DimProgram: SaleProgram, Description, Id
+- DimAddress: St#, Dir, PostDir, StreeName, StType, ZipCode2
+- DimZoneCategory: Id [PK], ZoneCategory
+- DimNeighborhood: Id [PK], Nhood
+- DimCouncilDistrict: Id[PK], CouncilDistrict
+- DimApplicant: Id [PK], Applicant (Name of the Applicant)
+- DimProgram: SaleProgram, Description, Id [PK]
+- DimDate: Date [PK], Build a calendar table
 
 ### 4. Dashboard Design & Building (Visualization)
-Business Core KPIs to Monitor:
-- 
+Business Core KPIs:
+- Total Sale Amount
+- Number fo Properties Sold
+- YoY Growth
+- Sales by Neighborhood/Program
+  - Drillthrough implementation
+- Top Applicants / Buyers
+- Sales timeline and seasonality
+- Data glossary (via tooltips) about: sale program, buyer, and zone 
+
+To see the final version of the dashboard, download this project and open the pbi file using Power BI Desktop.
 
 ### 5. Data Storytelling
 
@@ -56,3 +77,5 @@ Business Core KPIs to Monitor:
 ## Key Learnings
 
 ## Future Improvements
+- For the Drillthrough detailed page, add a title that displays the category selected when performing the drillthrough.
+  - Use a DAX to extract the selected category out of the report's context. 
