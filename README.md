@@ -25,21 +25,29 @@ __Attribution__: Mapping Data Source: LOJIC.
 
   - Pull a sample of 5 rows of the dataset to have an idea of the field data types.
   - Count-summarized all the quantitative columns to assess the impact of missing values (blank or nulls). 
-  - Leveraged pandas.info() to find fields with null values.
-  - Continue here...
+  - Leveraged pandas.info() to find fields with null values and the data types assigned to each column.
+    - With this information I assigned the appropriate data types to each column, in particular date fields for further processing. 
 
+  
+### 2. Data Cleaning
 Business Clarifications:
 -  Most of the property sales amounts in the dataset that are listed as 1 USD are correct because the cituy's priority is revitalization, not profit.
 -  The field "Post Dir" (Post Directional) appears to relate to address directionals (e.g. rear units), but due to unclear documentation and minimal use, it was excluded from the analysis.
 -  Some records have missing Zip Codes. The SME mentioned that some lots are unassigned or hard to map areas. It is important to include them to reflect the Landbank's total impact. Therefore, records were preserved and labeled explicitly as Unknown.
 -  Created a "Zone Category" with the idea to make the dashboard more insightful and audience friendly.
 
-  
-### 2. Data Cleaning
-
 ### 3. Data Modeling
+After the dataset has been cleaned and structured, I modelled it following the Kimball approach (Star Schema).
+
+- FactSales: ParcelId, SaleDate, SaleAmount
+- DimAddress: St#, Dir, PostDir, StreeName, StType, ZipGroup
+- DimZone; ZoneCategory, Nhood, CouncilDist
+- DimApplicant: Applicant, Id
+- DimProgram: SaleProgram, Description, Id
 
 ### 4. Dashboard Design & Building (Visualization)
+Business Core KPIs to Monitor:
+- 
 
 ### 5. Data Storytelling
 
