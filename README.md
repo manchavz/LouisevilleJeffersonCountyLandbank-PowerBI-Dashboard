@@ -1,4 +1,4 @@
-# LouisevilleJeffersonCountyLandbank-PowerBI-Dashboard
+# Louiseville & Jefferson County Landbank Analysis - Real Estate - 2015 to 2020
 Project that demonstrates all the steps taken to transform raw data into insightful information that empowers data driven decision making. Power BI was the main tool leveraged. Dataset period: Jan/1/2015 to Oct/13/2020.
 
 ## Objective
@@ -69,12 +69,6 @@ Business Core KPIs:
 - Data glossary (via tooltips) about: sale program, buyer, and zone 
 
 To see the final version of the dashboard, download this project and open the pbi file using Power BI Desktop.
-
-### 5. Data Storytelling
-
-## Key Findings
-
-## Key Learnings
 
 ## Future Improvements
 - For the Drillthrough detailed page, add a title that displays the category selected when performing the drillthrough.
